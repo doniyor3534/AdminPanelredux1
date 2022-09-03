@@ -1,0 +1,3273 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.loaderCardD{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(142, 140, 140, 0.548);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 555;
+}
+.loadericon .ant-spin-dot-spin{
+  width: 150px;
+  height: 150px;
+}
+.loadericon .ant-spin-dot-item{
+  width: 50px !important;
+  height: 50px !important;
+}
+.spinner-border{
+  width: 100px !important;
+  height: 100px !important;
+}
+.ant-modal-close-icon{
+  display: none !important;
+}
+.anticon-calendar svg{
+  display: none !important;
+}
+.ant-drawer-content-wrapper{
+  width: 20% !important;
+}
+.ant-select-suffix{
+  display: none !important;
+}
+.anticon-upload svg{
+  display: none !important;  
+}
+.anticon-spin svg{
+  display: none !important;
+}
+.ant-drawer-mask{
+  background-color: #867e2458 !important;
+}
+.burgermenu{
+  position: fixed;
+  top: 20px;
+  left: 2px;
+  z-index: 55556;
+  display: none;
+}
+.burgermenu svg{
+  color: grey;
+}
+.colorRed {
+  color: red;
+}
+.grey{
+  color: #c0c8db;
+}
+
+.colorgreen {
+  color: green;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5149E4 !important;
+}
+
+.h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: #0A0603;
+}
+
+button {
+  border: none;
+}
+
+svg {
+  color: blueviolet;
+}
+
+select {
+  border: 1px solid rgb(229, 228, 228);
+  border-radius: 5px;
+}
+
+/* //navbar */
+/* //navbar */
+.navbar {
+  padding: 10px 5%;
+  background-color: #F9FAFF;
+}
+
+.logo {
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navright {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  gap: 20px;
+}
+
+.btn-group {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(229, 228, 228);
+}
+
+.btn-group input {
+  border: none;
+
+}
+
+/* navbar */
+/* Saitbar */
+.saitbarLg{
+  width: 15%;
+  height: auto;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-right: 2px solid rgb(205, 203, 203);
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.resentcard p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  /* or 186% */
+
+
+  /* Gray */
+
+  color: #8A96B1;
+}
+
+.saitbar ul {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 0;
+}
+
+.saitbar ul a {
+  padding: 5px;
+  font-size: 15px;
+  padding-left: 30px;
+  font-weight: 500;
+  color: rgb(71, 24, 116);
+  width: 100%;
+  border-left: transparent 4px solid;
+}
+
+.saitbar ul a.active {
+  border-right: rgb(148, 54, 235) 5px solid;
+  border-left: rgb(147, 56, 232) 4px solid;
+  background-color: #3d37b61b;
+}
+.saitbar ul a:hover {
+  border-right: rgb(144, 55, 227) 5px solid;
+  border-left: rgb(134, 50, 213) 4px solid;
+  background-color: #3d37b61b;
+}
+.saitbar ul a svg {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-right: 10px;
+  background-color: rgba(225, 224, 225, 0.448);
+  transition: all 0.3s;
+}
+
+
+.saitbar ul a:hover svg {
+  color: white;
+  background-color: rgb(71, 24, 116);
+}
+
+.saitbar ul a.active svg {
+  color: white;
+  background-color: rgb(71, 24, 116);
+}
+
+.saitbar ul a:hover {
+  color: rgb(71, 24, 116);
+}
+
+
+
+/* Saitbar */
+/* home */
+
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.homeceneter {
+  width: 100%;
+}
+
+/* home */
+/* Dashboar */
+.dashboard {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 0px 0px 40px 40px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.dashboardleft {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+}
+.dashboardhed{
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+.proect_cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+
+.proect_card {
+  background: #F9FAFF;
+  cursor: pointer;
+}
+.proect_card .css-46bh2p-MuiCardContent-root {
+  padding: 20px;
+  height: 100% !important;
+}
+
+.proect_card .body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.activity {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+
+.activity_head {
+  display: flex;
+  align-items: center;
+  /* justify-content: start; */
+}
+
+.activity_head h3 {
+  margin-right: 100px;
+}
+
+.activity_p1 {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 15px solid blue;
+}
+
+.activity_p2 {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 15px solid #FFB9CD;
+}
+
+.pieChart {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  background: #F9FAFF;
+}
+
+.donutchart {
+  height: 300px !important;
+}
+
+.donutchart-innertext {
+  height: 30px !important;
+}
+
+
+.donutchart-legend {
+  display: none;
+  height: 0px !important;
+}
+
+.pieChartcard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+
+
+.activity .recharts-surface {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.recharts-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px !important;
+}
+
+.analizcards {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: #F9FAFF;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.analizcard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.balans1btn {
+  padding: 10px;
+  margin-right: 5px;
+  background: #5149E4;
+}
+
+.balans2btn {
+  padding: 10px;
+  margin-right: 5px;
+  background: #00A389;
+}
+
+.balans3btn {
+  padding: 10px;
+  margin-right: 5px;
+  background: #FF5B5B;
+}
+
+.dashboardBody {
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.contact {
+  background: #F9FAFF;
+  padding: 10px;
+}
+
+.cantactHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cantactHead button {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  background-color: #5149E4;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.contactBody {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  gap: 15px;
+  margin-top: 5px;
+  align-items: center;
+  border-bottom: 1px solid rgb(208, 206, 206);
+}
+
+.contactBody p {
+  font-size: 10px;
+  color: grey;
+}
+
+.contactBody img {
+  width: 100%;
+  height: 100%;
+  padding: 15px 10px;
+  background-color: rgb(231, 230, 230);
+}
+
+.contactBodyTitle p {
+  margin-bottom: 0;
+}
+
+.contactBodyBtnGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.vievmore {
+  width: 100%;
+  border: #a29dfa 1px solid;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: #c4c1fc 2px 2px 5px;
+}
+
+.massege {
+  background: #F9FAFF;
+  padding: 10px;
+}
+
+/* // */
+.userravieCards {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  row-gap: 10px;
+}
+
+.userraviesCard {
+  background-color: #FFF;
+  padding: 10px;
+}
+
+.userraviesCardHead {
+  display: flex;
+  gap: 10px;
+}
+
+.userraviesCardHead img {
+  background-color: rgb(202, 199, 199);
+  width: 50%;
+  height: 100%;
+}
+
+.userraviesCardBody p {
+  font-size: 10px;
+  color: rgb(177, 177, 177);
+  margin-top: 10px;
+}
+
+.userraviesCardFooter {
+  display: flex;
+  gap: 15px;
+}
+
+.userraviesCardFooter .archive {
+  font-size: 12px;
+  color: #f57b9e;
+}
+
+.userraviesCardFooter .accert {
+  font-size: 12px;
+  color: green;
+}
+
+/* ///////////////email */
+.emailpage {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  justify-content: space-between;
+}
+
+.saitbarrightEmail {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.emailcenterpage {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  padding: 20px;
+}
+
+.emailBlock {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.emailBlockleft {
+  height: 90vh;
+  background-color: #5149E4;
+  padding: 10px;
+}
+
+.newmail {
+  padding: 10px;
+  background-color: #FFF;
+  width: 100%;
+  font-weight: 600;
+}
+
+.emailBlockleft ul {
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.emailBlockleft li {
+  width: 100%;
+  padding: 10px;
+  color: #FFF;
+  margin: 2px 0;
+}
+
+.emailBlockleft li svg {
+  margin-right: 8px;
+  color: #FFF;
+}
+
+.emailBlockleft li:hover {
+  background-color: #FFF;
+  color: #000;
+  font-weight: 500;
+}
+
+.emailBlockleft li.active {
+  background-color: #FFF;
+  color: #000;
+  font-weight: 500;
+}
+
+.emailBlockleft li.active svg {
+  color: blueviolet;
+}
+
+.emailBlockleft li:hover svg {
+  color: blueviolet;
+}
+
+.emailBlockleft .labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.emailBlockleft .label {
+  color: rgb(142, 140, 140);
+  font-weight: 500;
+}
+
+.work {
+  color: #3ec6f7;
+}
+
+.SideProjects {
+  color: #f223f5;
+}
+
+.Offer {
+  color: #eeee25;
+}
+
+.emailBlockright {
+  padding: 10px;
+}
+
+.emailBlockright .head {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #000;
+}
+
+.emailBlockright .head h6 {
+  cursor: pointer;
+}
+
+.emailBlockright .head svg {
+  color: grey;
+  margin-right: 5px;
+}
+
+.emailBlockright .head h6.active {
+  border-bottom: 2px solid rgb(103, 22, 242);
+  margin-bottom: 0;
+}
+
+.emailBlockright .body {
+  width: 100%;
+  height: auto;
+  gap: 5px;
+  height: 80vh;
+  overflow: scroll;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.emailBlockright .body .bodyCard .bodyCard2{
+  height: 100%;
+  padding: 10px;
+  background-color: #F9FaFF;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  text-align: center;
+}
+
+.bodyCard>img {
+  width: 100px;
+  height: 100px;
+}
+
+.emailBlock .footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.emailBlock .footer button {
+  padding: 10px;
+  border: #8A96B1 1px solid;
+  border-radius: 5px;
+}
+
+.emailBlock .footer button:hover {
+  background-color: #5149E4;
+  color: #FFF;
+}
+
+
+
+/* ////////////////////contact */
+
+.serverStatus {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.praviewbtngroup {
+  display: flex;
+  gap: 10px;
+}
+
+.saitbarrightEmail {
+  padding: 10px;
+}
+
+.saitbarrightEmail p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  /* or 150% */
+
+
+  /* Gray */
+
+  color: #8A96B1;
+
+}
+
+.wekiy {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prewievCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.praviewbtngroup svg {
+  color: #8A96B1;
+}
+
+.prewievCard {
+  height: 100px;
+  border: rgb(190, 190, 190) 1px solid;
+}
+
+.prewievcardHead {
+  height: 70px;
+  background-color: #8A96B1;
+}
+
+.prewievcardbody {
+  color: #8A96B1;
+}
+
+.massegeCard {
+  width: 100%;
+  height: 100px;
+  border: rgb(180, 178, 178) 1px solid;
+  text-align: center;
+}
+
+.massegeCardhead {
+  height: 70px;
+}
+
+.priwievFooter {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.priwievFooter button {
+  padding: 10px 20px;
+  background-color: #5149E4;
+  color: #FFF;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.priwievFooter button:hover {
+  background-color: #3d37b6;
+}
+
+.priwievFooter button svg {
+  color: #FFF;
+}
+
+/* ///////////////////contact */
+
+.contactpage {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  padding: 20px;
+}
+
+.contactTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactTitleRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.newest {
+  padding: 10px;
+  color: #8A96B1;
+}
+
+.newbtn {
+  padding: 10px 20px;
+  background-color: #5149E4;
+  border-radius: 5px;
+}
+
+.newbtn svg {
+  color: #FFF;
+}
+
+.contactCards {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  row-gap: 10px;
+  margin-top: 30px;
+}
+
+.contactcard {
+  padding: 10px;
+  background-color: #d3d3d334;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 1s linear;
+  transition: all 0.2s ease-in-out;
+}
+
+.contactcard:hover {
+  box-shadow: #497ae4aa 5px 5px 15px;
+}
+
+.contactcardHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactcardHead>img {
+  width: 20%;
+  height: auto;
+}
+
+.contactardbody h5 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #0A0603;
+}
+
+.contactardbody p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8A96B1;
+}
+.noPage{
+  width: 100%;
+  height: auto;
+}
+.contactEmailP{
+  color: #c0c8db;
+  margin: 10px 0;
+}
+.contactcadFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  color: #8A96B1;
+}
+
+.contactcadFooter button {
+  color: #545861;
+}
+.contactCardBody{
+  display: flex;
+  justify-content: space-around;
+}
+
+/* /////////////////cryptoo */
+.cryptopage {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 20px;
+}
+
+.cryptoHome {
+  height: 90vh;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.cryptokattachart {
+  width: 100%;
+  height: 400px;
+}
+
+.cryptocards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.cryptoCard {
+  height: 150px;
+  padding: 10px;
+  background-color: #f7f7f896;
+  margin-bottom: 20px;
+}
+
+.cryptocardbody {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cryptocardbodyleft {
+  width: 70%;
+  overflow: hidden;
+}
+
+.cryptocardbodyrigh {
+  display: flex;
+  flex-direction: column;
+}
+
+.cryptocardbody .recharts-legend-item {
+  display: none !important;
+}
+
+.cryptocardbody .recharts-surface {
+  display: none !important;
+}
+
+/* //////////////////////cryptoSaitbar */
+.cryptoSaitbar {
+  height: 90vh;
+  overflow: scroll;
+  padding: 20px;
+  background: #F9FAFF;
+}
+
+.cryptosaitbarhead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cryptochartdacchik {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.bitcoincards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  row-gap: 10px;
+}
+
+.bitcoincard {
+  padding: 10px;
+  background-color: #c0c8db;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+}
+
+.bitcoincard .anticon {
+  padding: 5px;
+  background-color: #00A389;
+  cursor: pointer;
+}
+
+.bitcoincard .anticon svg {
+  width: 70%;
+  height: 90%;
+}
+
+.bitcoinname {
+  padding-left: 10px;
+}
+
+
+/* ///////////////////kanban */
+.kanban {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.kanban>h1 {
+  font-weight: 600;
+}
+
+.kanbanHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgb(200, 197, 197);
+  border-radius: 5px;
+}
+
+.kanbanHeadLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newProject {
+  padding: 6px 10px;
+  background-color: #3d37b6;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all .2s linear;
+}
+
+.newProject:hover {
+  background-color: #2e2986;
+  transform: scale(1.02);
+}
+
+.tab1CardFooter {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.tab1CardFooter button {
+  padding: 5px;
+  background-color: #8A96B1;
+  border-radius: 5px;
+}
+
+.tab1Cards {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  row-gap: 50px;
+  margin-top: 50px;
+  padding: 20px ;
+}
+
+.tab1Card::after {
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  width: 101%;
+  height: 101%;
+  content: '';
+  /* background: linear-gradient( to top left, yellow,red,blue); */
+  z-index: -1;
+}
+
+.tab1Card {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  background: #F9FAFF;
+}
+
+.tab1Card:hover {
+  box-shadow: #3d37b666 1px 1px 10px;
+}
+
+.tab1Card   img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgb(206, 205, 205);
+}
+
+.tab1cardRange {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+/* /////////////////invoice */
+.invoice {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.invoiceLeft {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
+.invoiceLeft>h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.invoiceLeftPage {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.invoiceLeftPageHead {
+  padding: 40px 20px;
+  background: #5149E4;
+  display: grid;
+  grid-template-columns: 30% 20% 20% 30%;
+  align-items: center;
+}
+
+.invoiceLeftPageHead h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  /* identical to box height */
+
+
+  /* White */
+
+  color: #FFFFFF;
+}
+
+.invoiceLeftPageHead h5 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+
+  /* White */
+
+  color: #FFFFFF;
+}
+
+.invoiceLeftPageHead p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 34px;
+  /* identical to box height */
+
+
+  /* White */
+
+  color: #FFFFFF;
+}
+
+.withdravbtn {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 34px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.withdravbtn:hover {
+  background: rgba(134, 7, 189, 0.627);
+}
+
+.withdravbtn:hover svg {
+  color: #FFF;
+}
+
+.invoiceLeftBody {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.demochart {
+  height: 200px;
+}
+
+.sendivoicetitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+  margin: 15px 0;
+}
+
+.sendVoci {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.sendVoci p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8A96B1;
+  margin: 10px 0;
+}
+
+.sendVoci .senvoicebtn {
+  background: #ECEFF7;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.sendBtn {
+  width: 100%;
+  padding: 15px;
+  background-color: #8781ef;
+  color: #FFF;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+.sendBtn:hover {
+  background-color: #4a44b8;
+}
+
+.sendBtn:hover svg {
+  color: #eeeef5;
+}
+
+.sendvociRight .bntgroup {
+  display: flex;
+  gap: 10px;
+}
+
+
+.invoiceLeftPageRight {
+  background-color: #c0c8db52;
+  padding: 15px;
+}
+
+.invoiceNatija {
+  height: 150px;
+  display: grid;
+  grid-template-columns: 20% 30% 50%;
+  align-items: flex-start;
+}
+
+.invoiceSaitbar {
+  padding: 10px;
+}
+
+.invoiceNatijaChart canvas {
+  height: 150px !important;
+}
+
+.invoiceSaitbarhead {
+  padding: 15px;
+  background: rgba(128, 128, 128, 0.39);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.invoiceSaitbarBody {
+  padding: 10px;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.invoiceSaitbarCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px 0;
+  border-bottom: 1px solid rgb(197, 194, 194);
+}
+
+.invoiceSaitbarCardBtn {
+  text-align: center;
+}
+
+.invoiceSaitbarCardBtn svg {
+  color: grey;
+}
+
+.banking {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  padding: 15px;
+}
+
+.bankingPage {
+  display: grid;
+  grid-template-columns:100%;
+  gap: 10px;
+}
+
+.profit {
+  padding: 15px;
+  background: #F9FAFF;
+}
+
+.proftiTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.proftiTitleBody {
+  padding-top: 10px;
+}
+
+.lesttest {
+  background: #F9FAFF;
+  margin-top: 10px;
+}
+
+.lestestTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.lestBtnGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.lestBtnGroup svg {
+  color: grey;
+}
+
+.bankingSaitbarCard {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.bankingSaitbarCard img {
+  width: 100%;
+}
+
+
+/* ///////////////ticketing */
+.TTicketing {
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  padding: 15px;
+}
+.tcketingPage{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 15px;
+}
+.ticketingLeft{
+  margin-top: 20px;
+}
+.ticketingLeftHead{
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+.ticketingCard{
+  padding: 15px;
+  background-color: #F9FAFF;
+}
+.ticketingCard h4{
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  /* identical to box height */
+  
+  
+  /* Black */
+  
+  color: #0A0603;
+}
+.tickeingSaitbar{
+  height: 90vh;
+  overflow: scroll;
+  padding: 10px;
+  background-color: #F9FAFF;
+}
+.today{
+  margin: 20px 0;
+}
+.todaycard{
+  height: 100px;
+  padding: 10px;
+  background-color: #FFF;
+  margin: 15px 0;
+  display: grid;
+  grid-template-columns: 5% 50% 45%;
+}
+.cardCenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* /////////////////////////media1440*/
+@media(max-width:1440px){
+ 
+  .burgermenu{
+    position: fixed;
+    top: 20px;
+    left: 2px;
+    z-index: 55556;
+    display: none;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0A0603;
+  }
+  .ant-drawer-content-wrapper{
+    width: 30% !important;
+  }
+  .logo {
+    height: 50px;
+    mix-blend-mode: multiply;
+  }
+  
+  .navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn-group {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 228, 228);
+  }
+  
+  .btn-group input {
+    border: none;
+  
+  }
+ .navbar{
+  display: flex;
+ }
+ .navbar-brand{
+  width: 60%;
+  font-size: 10px;
+ }
+.btn-group{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+  .homeceneter{
+    width: 85%;
+  }
+  
+/* Saitbar */
+
+.saitbarLg{
+  width: 15%;
+  display: block;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+}
+.saitbar ul a{
+  padding-left: 3px;
+}
+.saitbar ul{
+  margin-top: 5px;
+  row-gap: 0;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+
+/* dashboard */
+.dashboard{
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+.proect_cards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+  row-gap: 15px;
+}
+.chartscircle{
+  display: flex;
+}
+.pieChartcard{
+  grid-template-columns:100%;
+}
+.activity .recharts-surface{
+  width: 80% !important;
+  margin-top: 5px;
+}
+.analizcards{
+  grid-template-columns: 50% 50%;
+}
+.dashboardBody{
+  width: 100%;
+  grid-template-columns: repeat(2,1fr);
+  margin-bottom: 20px;
+}
+.contact{
+  width: 100%;
+}
+.contactBody{
+  gap: 5px;
+}
+.cantactHead button{
+  margin-left: 10px;
+}
+
+/* ///email */
+.emailcenterpage{
+  width: 100%;
+  padding: 2px;
+}
+.emailBlock{
+  grid-template-columns: 20% 80%;
+}
+
+.bodyCard  img{
+  height: 80px;
+  width: 80px;
+}
+
+.emailBlockleft{
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+.emailBlockleft li{
+  display: flex;
+  gap: 30px;
+}
+.emailBlockleft li.active{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.emailBlockleft li:hover{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.newmail{
+  color: transparent;
+  padding: 0;
+}
+.emailBlockright{
+  height: 90vh;
+  overflow: scroll;
+}
+.emailBlockright .body{
+  grid-template-columns: repeat(2,1fr);
+  gap: 3px;
+}
+/* ////////contact */
+.contactpage{
+  padding: 2px;
+}
+.contactTitle{
+  flex-direction: column;
+}
+.contactTitleRight{
+  justify-content: space-between;
+}
+.contactCards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+
+/* ////kanban */
+.kanbanHead{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 15px;
+}
+.kanbanHeadLeft{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab1Cards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+  padding: 20px ;
+}
+
+/* ///////invoice */
+.invoice{
+  grid-template-columns: 100%;
+}
+.invoiceLeftBody{
+  grid-template-columns: repeat(1,1fr);
+}
+.invoiceLeftPageHead h1{
+  font-size: 30px;
+  line-height: 25px;
+}
+.invoiceLeftPageHead{
+  grid-template-columns: 50% 50%;
+}
+/* //////////Banking */
+.banking{
+  padding: 2px;
+}
+.bankingPage{
+  grid-template-columns: 100%;
+}
+.sevinges{
+  padding: 5px;
+}
+/* //////////Ticketing */
+.tickeingSaitbar{
+  width: 100%;
+}
+.todaycard{
+  overflow: hidden;
+}
+.tcketingPage{
+  grid-template-columns: 100%;
+}
+.ticketingLeftHead{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+  row-gap: 15px;
+}
+.ant-picker-body{
+  width: 100% !important;
+}
+
+
+
+
+}
+/* /////////////////////////media1200*/
+@media(max-width:1200px){
+ 
+  .burgermenu{
+    position: fixed;
+    top: 20px;
+    left: 2px;
+    z-index: 55556;
+    display: none;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0A0603;
+  }
+  .ant-drawer-content-wrapper{
+    width: 40% !important;
+  }
+  .logo {
+    height: 50px;
+    mix-blend-mode: multiply;
+  }
+  
+  .navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn-group {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 228, 228);
+  }
+  
+  .btn-group input {
+    border: none;
+  
+  }
+ .navbar{
+  display: flex;
+ }
+ .navbar-brand{
+  width: 60%;
+  font-size: 10px;
+ }
+.btn-group{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+  .homeceneter{
+    width: 85%;
+  }
+  
+/* Saitbar */
+
+.saitbarLg{
+  width: 15%;
+  display: block;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+}
+.saitbar ul a{
+  padding-left: 3px;
+}
+.saitbar ul{
+  margin-top: 5px;
+  row-gap: 0;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+
+/* dashboard */
+.dashboard{
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+.proect_cards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+  row-gap: 15px;
+}
+.chartscircle{
+  display: flex;
+}
+.pieChartcard{
+  grid-template-columns:100%;
+}
+.activity .recharts-surface{
+  width: 80% !important;
+  margin-top: 5px;
+}
+.analizcards{
+  grid-template-columns: 50% 50%;
+}
+.dashboardBody{
+  width: 100%;
+  grid-template-columns: repeat(2,1fr);
+  margin-bottom: 20px;
+}
+.contact{
+  width: 100%;
+}
+.contactBody{
+  gap: 5px;
+}
+.cantactHead button{
+  margin-left: 10px;
+}
+
+/* ///email */
+.emailcenterpage{
+  width: 100%;
+  padding: 2px;
+}
+.emailBlock{
+  grid-template-columns: 30% 70%;
+}
+.bodyCard>img{
+  height: 80px;
+}
+.emailBlockleft{
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+.emailBlockleft li{
+  display: flex;
+  gap: 30px;
+}
+.emailBlockleft li.active{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.emailBlockleft li:hover{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.newmail{
+  color: transparent;
+  padding: 0;
+}
+.emailBlockright{
+  height: 90vh;
+  overflow: scroll;
+}
+
+/* ////////contact */
+.contactpage{
+  padding: 2px;
+}
+.contactTitle{
+  flex-direction: column;
+}
+.contactTitleRight{
+  justify-content: space-between;
+}
+.contactCards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+
+/* ////kanban */
+.kanbanHead{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 15px;
+}
+.kanbanHeadLeft{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab1Cards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+/* ///////invoice */
+.invoice{
+  grid-template-columns: 100%;
+}
+.invoiceLeftBody{
+  grid-template-columns: repeat(1,1fr);
+}
+.invoiceLeftPageHead h1{
+  font-size: 30px;
+  line-height: 25px;
+}
+.invoiceLeftPageHead{
+  grid-template-columns: 50% 50%;
+}
+/* //////////Banking */
+.banking{
+  padding: 2px;
+}
+.bankingPage{
+  grid-template-columns: 100%;
+}
+.sevinges{
+  padding: 5px;
+}
+/* //////////Ticketing */
+.tickeingSaitbar{
+  width: 100%;
+}
+.todaycard{
+  overflow: hidden;
+}
+.tcketingPage{
+  grid-template-columns: 100%;
+}
+.ticketingLeftHead{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+  row-gap: 15px;
+}
+.ant-picker-body{
+  width: 100% !important;
+}
+
+
+
+
+}
+/* /////////////////////////media1050*/
+@media(max-width:1050px){
+ 
+  .burgermenu{
+    position: fixed;
+    top: 20px;
+    left: 2px;
+    z-index: 55556;
+    display: none;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0A0603;
+  }
+  .ant-drawer-content-wrapper{
+    width: 40% !important;
+  }
+  .logo {
+    height: 50px;
+    mix-blend-mode: multiply;
+  }
+  
+  .navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn-group {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 228, 228);
+  }
+  
+  .btn-group input {
+    border: none;
+  
+  }
+ .navbar{
+  display: flex;
+ }
+ .navbar-brand{
+  width: 60%;
+  font-size: 10px;
+ }
+.btn-group{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+  .homeceneter{
+    width: 80%;
+  }
+  
+/* Saitbar */
+
+.saitbarLg{
+  width: 20%;
+  display: block;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+}
+.saitbar ul a{
+  padding-left: 3px;
+}
+.saitbar ul{
+  margin-top: 5px;
+  row-gap: 0;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+
+/* dashboard */
+.dashboard{
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+.proect_cards{
+  grid-template-columns: repeat(2,1fr);
+}
+.chartscircle{
+  display: flex;
+}
+.pieChartcard{
+  grid-template-columns:100%;
+}
+.activity .recharts-surface{
+  width: 80% !important;
+  margin-top: 5px;
+}
+.analizcards{
+  grid-template-columns: 50% 50%;
+}
+.dashboardBody{
+  width: 100%;
+  grid-template-columns: repeat(2,1fr);
+  margin-bottom: 20px;
+}
+.contact{
+  width: 100%;
+}
+.contactBody{
+  gap: 5px;
+}
+.cantactHead button{
+  margin-left: 10px;
+}
+
+/* ///email */
+.emailcenterpage{
+  width: 100%;
+  padding: 2px;
+}
+.emailBlock{
+  grid-template-columns: 30% 70%;
+}
+.bodyCard>img{
+  height: 80px;
+}
+.emailBlockleft{
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+.emailBlockleft li{
+  display: flex;
+  gap: 30px;
+}
+.emailBlockleft li.active{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.emailBlockleft li:hover{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.newmail{
+  color: transparent;
+  padding: 0;
+}
+.emailBlockright{
+  height: 90vh;
+  overflow: scroll;
+}
+
+/* ////////contact */
+.contactpage{
+  padding: 2px;
+}
+.contactTitle{
+  flex-direction: column;
+}
+.contactTitleRight{
+  justify-content: space-between;
+}
+.contactCards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+
+/* ////kanban */
+.kanbanHead{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 15px;
+}
+.kanbanHeadLeft{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab1Cards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+/* ///////invoice */
+.invoice{
+  grid-template-columns: 100%;
+}
+.invoiceLeftBody{
+  grid-template-columns: repeat(1,1fr);
+}
+.invoiceLeftPageHead h1{
+  font-size: 30px;
+  line-height: 25px;
+}
+.invoiceLeftPageHead{
+  grid-template-columns: 50% 50%;
+}
+/* //////////Banking */
+.banking{
+  padding: 2px;
+}
+.bankingPage{
+  grid-template-columns: 100%;
+}
+.sevinges{
+  padding: 5px;
+}
+/* //////////Ticketing */
+.tickeingSaitbar{
+  width: 100%;
+}
+.todaycard{
+  overflow: hidden;
+}
+.tcketingPage{
+  grid-template-columns: 100%;
+}
+.ticketingLeftHead{
+  grid-template-columns: repeat(2,1fr);
+}
+.ant-picker-body{
+  width: 100% !important;
+}
+
+
+
+
+}
+/* /////////////////////////media768*/
+@media(max-width:768px){
+ 
+  .burgermenu{
+    position: fixed;
+    top: 20px;
+    left: 2px;
+    z-index: 55556;
+    display: inline-block;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0A0603;
+  }
+  .ant-drawer-content-wrapper{
+    width: 40% !important;
+  }
+  .logo {
+    height: 50px;
+    mix-blend-mode: multiply;
+  }
+  
+  .navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn-group {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 228, 228);
+  }
+  
+  .btn-group input {
+    border: none;
+  
+  }
+ .navbar{
+  display: flex;
+ }
+ .navbar-brand{
+  width: 60%;
+  font-size: 10px;
+ }
+.btn-group{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+  .homeceneter{
+    width: 100%;
+  }
+  
+/* Saitbar */
+
+.saitbarLg{
+  display: none;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+}
+.saitbar ul a{
+  padding-left: 3px;
+}
+.saitbar ul{
+  margin-top: 5px;
+  row-gap: 0;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+
+/* dashboard */
+.dashboard{
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+.proect_cards{
+  grid-template-columns: repeat(2,1fr);
+}
+.chartscircle{
+  display: flex;
+}
+.pieChartcard{
+  grid-template-columns:100%;
+}
+.activity .recharts-surface{
+  width: 80% !important;
+  margin-top: 5px;
+}
+.analizcards{
+  grid-template-columns: 50% 50%;
+}
+.dashboardBody{
+  width: 100%;
+  grid-template-columns: 100%;
+}
+.contact{
+  width: 100%;
+}
+.contactBody{
+  gap: 5px;
+}
+.cantactHead button{
+  margin-left: 10px;
+}
+
+/* ///email */
+.emailcenterpage{
+  width: 100%;
+  padding: 2px;
+}
+.emailBlock{
+  grid-template-columns: 30% 70%;
+}
+.bodyCard>img{
+  height: 80px;
+}
+.emailBlockleft{
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+.emailBlockleft li{
+  display: flex;
+  gap: 30px;
+}
+.emailBlockleft li.active{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.emailBlockleft li:hover{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.newmail{
+  color: transparent;
+  padding: 0;
+}
+.emailBlockright{
+  height: 90vh;
+  overflow: scroll;
+}
+
+/* ////////contact */
+.contactpage{
+  padding: 2px;
+}
+.contactTitle{
+  flex-direction: column;
+}
+.contactTitleRight{
+  justify-content: space-between;
+}
+.contactCards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+
+/* ////kanban */
+.kanbanHead{
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 5px;
+}
+.kanbanHeadLeft{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab1Cards{
+  grid-template-columns: repeat(1,1fr);
+}
+/* ///////invoice */
+.invoice{
+  grid-template-columns: 100%;
+}
+.invoiceLeftBody{
+  grid-template-columns: repeat(1,1fr);
+}
+.invoiceLeftPageHead h1{
+  font-size: 30px;
+  line-height: 25px;
+}
+.invoiceLeftPageHead{
+  grid-template-columns: 50% 50%;
+}
+/* //////////Banking */
+.banking{
+  padding: 2px;
+}
+.bankingPage{
+  grid-template-columns: 100%;
+}
+.sevinges{
+  padding: 5px;
+}
+/* //////////Ticketing */
+.tickeingSaitbar{
+  width: 100%;
+}
+.todaycard{
+  overflow: hidden;
+}
+.tcketingPage{
+  grid-template-columns: 100%;
+}
+.ticketingLeftHead{
+  grid-template-columns: repeat(2,1fr);
+}
+.ant-picker-body{
+  width: 100% !important;
+}
+
+
+
+
+}
+/* /////////////////////////media576*/
+@media(max-width:576px){
+ 
+  .burgermenu{
+    position: fixed;
+    top: 20px;
+    left: 2px;
+    z-index: 55556;
+    display: inline-block;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0A0603;
+  }
+  .ant-drawer-content-wrapper{
+    width: 60% !important;
+  }
+  .logo {
+    height: 50px;
+    mix-blend-mode: multiply;
+  }
+  
+  .navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn-group {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 228, 228);
+  }
+  
+  .btn-group input {
+    border: none;
+  
+  }
+ .navbar{
+  display: flex;
+ }
+ .navbar-brand{
+  width: 60%;
+  font-size: 10px;
+ }
+.btn-group{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+  .homeceneter{
+    width: 100%;
+  }
+  
+/* Saitbar */
+
+.saitbarLg{
+  display: none;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+}
+.saitbar ul a{
+  padding-left: 3px;
+}
+.saitbar ul{
+  margin-top: 5px;
+  row-gap: 0;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+
+/* dashboard */
+.dashboard{
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+.proect_cards{
+  grid-template-columns: repeat(2,1fr);
+}
+.chartscircle{
+  display: flex;
+}
+.pieChartcard{
+  grid-template-columns:100%;
+}
+.activity .recharts-surface{
+  width: 80% !important;
+  margin-top: 5px;
+}
+.analizcards{
+  grid-template-columns: 50% 50%;
+}
+.dashboardBody{
+  width: 100%;
+  grid-template-columns: 100%;
+}
+.contact{
+  width: 100%;
+}
+.contactBody{
+  gap: 5px;
+}
+.cantactHead button{
+  margin-left: 10px;
+}
+
+/* ///email */
+.emailcenterpage{
+  width: 100%;
+  padding: 2px;
+}
+.emailBlock{
+  grid-template-columns: 10% 90%;
+}
+.bodyCard>img{
+  height: 80px;
+}
+.emailBlockleft{
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+.emailBlockleft li{
+  display: flex;
+  gap: 30px;
+}
+.emailBlockleft li.active{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.emailBlockleft li:hover{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.newmail{
+  color: transparent;
+  padding: 0;
+}
+.emailBlockright{
+  height: 90vh;
+  overflow: scroll;
+}
+.emailBlockright .body{
+  grid-template-columns: repeat(1,1fr);
+  gap: 3px;
+}
+/* ////////contact */
+.contactpage{
+  padding: 2px;
+}
+.contactTitle{
+  flex-direction: column;
+}
+.contactTitleRight{
+  justify-content: space-between;
+}
+.contactCards{
+  grid-template-columns: repeat(2,1fr);
+  gap: 5px;
+}
+
+/* ////kanban */
+.kanbanHead{
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 5px;
+}
+.kanbanHeadLeft{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab1Cards{
+  grid-template-columns: repeat(1,1fr);
+}
+.tab1Card{
+  margin-top: 20px;
+}
+/* ///////invoice */
+.invoice{
+  grid-template-columns: 100%;
+}
+.invoiceLeftBody{
+  grid-template-columns: repeat(1,1fr);
+}
+.invoiceLeftPageHead h1{
+  font-size: 30px;
+  line-height: 25px;
+}
+.invoiceLeftPageHead{
+  grid-template-columns: 50% 50%;
+}
+/* //////////Banking */
+.banking{
+  padding: 2px;
+}
+.bankingPage{
+  grid-template-columns: 100%;
+}
+.sevinges{
+  padding: 5px;
+}
+/* //////////Ticketing */
+.tickeingSaitbar{
+  width: 100%;
+}
+.todaycard{
+  overflow: hidden;
+}
+.tcketingPage{
+  grid-template-columns: 100%;
+}
+.ticketingLeftHead{
+  grid-template-columns: repeat(2,1fr);
+}
+.ant-picker-body{
+  width: 100% !important;
+}
+
+
+
+
+}
+/* /////////////////////////media400 */
+@media(max-width:400px){
+ 
+  .burgermenu{
+    position: fixed;
+    top: 20px;
+    left: 2px;
+    z-index: 55556;
+    display: inline-block;
+  }
+  .h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0A0603;
+  }
+  .ant-drawer-content-wrapper{
+    width: 60% !important;
+  }
+  .logo {
+    height: 50px;
+    mix-blend-mode: multiply;
+  }
+  
+  .navright {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .btn-group {
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 228, 228);
+  }
+  
+  .btn-group input {
+    border: none;
+  
+  }
+ .navbar{
+  display: flex;
+ }
+ .navbar-brand{
+  width: 60%;
+  font-size: 10px;
+ }
+.btn-group{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+  .homeceneter{
+    width: 100%;
+  }
+  
+/* Saitbar */
+
+.saitbarLg{
+  display: none;
+}
+.saitbar {
+  background: #F9FAFF;
+  width: 100%;
+}
+
+.saitbarright {
+  background: #F9FAFF;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 2px solid rgb(205, 203, 203);
+}
+
+.resentActive {
+  padding: 10px;
+}
+
+.resentActive h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+
+  /* Black */
+
+  color: #0A0603;
+}
+
+.serverStatus img {
+  width: 100%;
+}
+
+.resentcards {
+  display: flex;
+  flex-direction: column;
+}
+
+.resentcard {
+  display: flex;
+  border-left: #d3d3d3 2px solid;
+  padding-left: 8px;
+  position: relative;
+}
+
+.resentcard span {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+.resentcard h6 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+}
+.saitbar ul a{
+  padding-left: 3px;
+}
+.saitbar ul{
+  margin-top: 5px;
+  row-gap: 0;
+}
+.ant-drawer-body{
+  padding: 0 !important;
+}
+
+/* dashboard */
+.dashboard{
+  padding: 5px 5px 5px 5px;
+  margin-top: 15px;
+}
+.proect_cards{
+  grid-template-columns: repeat(2,1fr);
+}
+.chartscircle{
+  flex-direction: column;
+}
+.pieChartcard{
+  grid-template-columns:100%;
+}
+.activity .recharts-surface{
+  width: 80% !important;
+  margin-top: 55px;
+}
+.analizcards{
+  grid-template-columns: 100%;
+}
+.dashboardBody{
+  width: 100%;
+  grid-template-columns: 100%;
+}
+.contact{
+  width: 100%;
+}
+.contactBody{
+  gap: 5px;
+}
+.cantactHead button{
+  margin-left: 10px;
+}
+
+/* ///email */
+.emailcenterpage{
+  width: 100%;
+  padding: 2px;
+}
+.emailBlock{
+  grid-template-columns: 15% 85%;
+}
+.bodyCard>img{
+  height: 80px;
+}
+.emailBlockleft{
+  width: 100%;
+  overflow: hidden;
+  padding: 2px;
+}
+.emailBlockleft li{
+  display: flex;
+  gap: 30px;
+}
+.emailBlockleft li.active{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.emailBlockleft li:hover{
+  background-color: transparent;
+  color: #3d37b6;
+}
+.newmail{
+  color: transparent;
+  padding: 0;
+}
+.emailBlockright{
+  height: 90vh;
+  overflow: scroll;
+}
+.emailBlockright .body{
+  grid-template-columns: repeat(1,1fr);
+  gap: 3px;
+}
+/* ////////contact */
+.contactpage{
+  padding: 2px;
+}
+.contactTitle{
+  flex-direction: column;
+}
+.contactTitleRight{
+  justify-content: space-between;
+}
+.contactCards{
+  grid-template-columns: repeat(1,1fr);
+}
+.cryptocards{
+  grid-template-columns: repeat(1,1fr);
+  gap: 2px;
+}
+/* ///////// */
+.cryptopage{
+  padding: 2px;
+}
+.cryptoCard{
+  margin-bottom: 5px;
+}
+/* ////kanban */
+.kanbanHead{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding: 5px;
+}
+.kanbanHeadLeft{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab1Cards{
+  grid-template-columns: repeat(1,1fr);
+}
+/* ///////invoice */
+.ant-btn-background-ghost.ant-btn-dangerous{
+  padding: 0 !important;
+  font-size: 8px !important;
+}
+.ant-btn-background-ghost{
+  padding: 0 !important;
+  font-size: 8px !important;
+}
+.ant-btn-background-ghost svg{
+  width: 10px !important;
+}
+.ant-btn-background-ghost.ant-btn-dangerous svg{
+  width: 10px !important;
+}
+.invoice{
+  grid-template-columns: 100%;
+}
+.invoiceLeftBody{
+  grid-template-columns: repeat(1,1fr);
+}
+.invoiceLeftPageHead h1{
+  font-size: 30px;
+  line-height: 25px;
+}
+.invoiceLeftPageHead{
+  grid-template-columns: 100%;
+}
+/* //////////Banking */
+.banking{
+  padding: 2px;
+}
+.bankingPage{
+  grid-template-columns: 100%;
+}
+.sevinges{
+  padding: 5px;
+}
+/* //////////Ticketing */
+.tickeingSaitbar{
+  width: 100%;
+}
+.todaycard{
+  overflow: hidden;
+}
+.tcketingPage{
+  grid-template-columns: 100%;
+}
+.ticketingLeftHead{
+  grid-template-columns: repeat(2,1fr);
+}
+.ant-picker-body{
+  width: 100% !important;
+}
+
+
+
+
+}
