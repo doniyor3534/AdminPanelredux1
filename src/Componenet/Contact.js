@@ -47,35 +47,55 @@ const Contact = () => {
     // const onFormLayoutChange = ({ size }) => {
     //     setComponentSize(size);
     // };
-       // ///////////Alert/////
+    // ///////////Alert/////
 
-       const AlertOK = () => {
+    const AlertOK = () => {
         toast.success('Yuklandi')
     }
-    // const Alerterr = () => {
-    //     toast.error('Error')
-    // }
+    const Alerterr = () => {
+        toast.error('Error')
+    }
     const AlertWar = () => {
-        toast.warning('Dlete')
+        toast.warning('Delete')
     }
     // ///////////Alert/////
     // ///////////////////inputfun/////
     const inputfun = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value })
     }
-    const inputfunImg=(e)=>{
-        setInput({ ...input, img:  URL.createObjectURL(e.target.files[0]) })
-     }
+    const inputfunImg = (e) => {
+        setInput({ ...input, img: URL.createObjectURL(e.target.files[0]) })
+    }
+    const nameVAll = comments.find(val => val.name===input.name)
+    const emailVAll = comments.find(val => val.email===input.email)
+    const imgVAll = comments.find(val => val.img===input.img)
+    const telVAll = comments.find(val => val.tel===input.tel)
     const send = () => {
-        dispatch(ADD({ ...input, id: new Date().getTime() }))
-        AlertOK()
+        if (nameVAll) {
+            toast.error('name err')
+        } 
+        if (emailVAll) {
+            toast.error('email err')
+        } 
+        if (imgVAll) {
+            toast.error('img err')
+        } 
+        if (telVAll) {
+            toast.error('tel err')
+        } 
+        if (input.name && input.comment && input.email && input.img && input.narx && input.tel && !nameVAll && !emailVAll && !imgVAll && !telVAll) {
+            dispatch(ADD({ ...input, id: new Date().getTime() }))
+            AlertOK()
+            console.log(nameVAll);
+        } else {
+            Alerterr()
+        }
     }
     const deletFun = (id) => {
         dispatch(DEL(id))
         AlertWar()
     }
-    
-    console.log();
+    console.log(nameVAll);
     return (
         <div className='contactpage'>
             <div className="contactTitle">
@@ -140,24 +160,24 @@ const Contact = () => {
             <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <form onSubmit={send} >
                     <label htmlFor="Name">Name</label>
-                    <input type="text" className='form-control  my-2' placeholder='Name' name='name' onChange={inputfun} value={input.name} />
+                    <input type="text" style={nameVAll ? {border:'1px solid red'}:!input.name?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control  my-2' placeholder='Name' name='name' onChange={inputfun} value={input.name} />
                     <label htmlFor="email">Email</label>
-                    <input type="email" className='form-control  my-2' placeholder='Email' name='email' onChange={inputfun} value={input.email} />
-                    <label htmlFor="commint" >Commint</label>
-                    <input type="text" className='form-control  my-2' placeholder='commint' name='comment' onChange={inputfun} value={input.comment} />
+                    <input type="email" style={emailVAll ? {border:'1px solid red'}:!input.email?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control  my-2' placeholder='Email' name='email' onChange={inputfun} value={input.email} />
+                    <label htmlFor="comment" >Comment</label>
+                    <input type="text" style={!input.comment?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control  my-2' placeholder='comment' name='comment' onChange={inputfun} value={input.comment} />
                     <label htmlFor="Foiz">Foiz</label>
-                    <input type="number" className='form-control my-2' placeholder='...%' name='foiz' onChange={inputfun} value={input.foiz} />
+                    <input type="number"style={!input.foiz?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control my-2' placeholder='...%' name='foiz' onChange={inputfun} value={input.foiz} />
                     <label htmlFor="img">Image</label>
-                    <input type="file" className='form-control my-2' placeholder='img' name='img' onChange={inputfunImg}  />
+                    <input type="file" style={imgVAll ? {border:'1px solid red'}:!input.img?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control my-2' placeholder='img' name='img' onChange={inputfunImg} />
                     <label htmlFor="narx">Narx</label>
-                    <input type="number" className='form-control my-2' placeholder='narx' name='narx' onChange={inputfun} value={input.narx} />
+                    <input type="number"style={!input.narx?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control my-2' placeholder='narx' name='narx' onChange={inputfun} value={input.narx} />
                     <label htmlFor="tel">Tel</label>
-                    <input type="number" className='form-control my-2' placeholder='+998....' name='tel' onChange={inputfun} value={input.tel} />
-                    <button className='btn btn-primary w-50 my-3' >Add</button>
+                    <input type="number" style={telVAll ? {border:'1px solid red'}:!input.tel?{border:'1px solid grey'}:{border:'1px solid green'}} className='form-control my-2' placeholder='+998....' name='tel' onChange={inputfun} value={input.tel} />
+                    <button className={input.name && input.comment && input.email && input.img && input.narx && input.tel ?'btn btn-primary w-50 my-3':'btn btn-warning disabled w-50 my-3'}  >Add</button>
                 </form>
-                <img src="C:\\fakepath\\photo_2022-05-10_07-57-00.jpg" alt="" />
+               
             </Modal>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     );
 };

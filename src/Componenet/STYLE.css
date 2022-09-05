@@ -2560,6 +2560,9 @@ select {
   width: 100%;
   padding: 2px;
 }
+.emailBlockright .body{
+  grid-template-columns: repeat(1,1fr);
+}
 .emailBlock{
   grid-template-columns: 30% 70%;
 }
@@ -2959,7 +2962,7 @@ select {
 
 }
 /* /////////////////////////media400 */
-@media(max-width:400px){
+@media(max-width:450px){
  
   .burgermenu{
     position: fixed;
@@ -3141,7 +3144,7 @@ select {
   padding: 2px;
 }
 .emailBlock{
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 17% 83%;
 }
 .bodyCard>img{
   height: 80px;
@@ -3174,10 +3177,18 @@ select {
 .emailBlockright .body{
   grid-template-columns: repeat(1,1fr);
   gap: 3px;
+  row-gap: 10px;
+}
+.bodycardTitle{
+  overflow-x: scroll;
 }
 /* ////////contact */
 .contactpage{
   padding: 2px;
+}
+.contactCards{
+  grid-template-columns: repeat(1,1fr);
+  padding: 3px;
 }
 .contactTitle{
   flex-direction: column;
@@ -3185,9 +3196,7 @@ select {
 .contactTitleRight{
   justify-content: space-between;
 }
-.contactCards{
-  grid-template-columns: repeat(1,1fr);
-}
+
 .cryptocards{
   grid-template-columns: repeat(1,1fr);
   gap: 2px;
