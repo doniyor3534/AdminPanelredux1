@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 
 export const onMenuClick = (e) => {
@@ -93,11 +94,11 @@ export const Tab3 = () => {
 }
 
 
-
 const Kanban = () => {
+    const {t} = useTranslation()
     return (
         <div className='kanban'>
-            <h1 className='h1'>Kanban</h1>
+            <h1 className='h1'>{t('Kanban')}</h1>
             <div className="kanbanHead">
                 <div className="kanbanHeadLeft">
                     <h6>Project #1  Board</h6>

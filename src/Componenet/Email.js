@@ -19,6 +19,7 @@ import Card from '@mui/material/Card';
 import { CardActionArea, CardContent, CardMedia } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
 import { ADD } from '../redux/action/Action';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -113,14 +114,14 @@ const Email = () => {
         }
     }
     // ///////////////////////
-
+   const {t} = useTranslation()
     return (
         <div className='emailpage'>
             <div className="emailcenterpage">
 
                 <div className="dashboardhed">
 
-                    <h1 className='h1'>Email</h1>
+                    <h1 className='h1'>{t('Email')}</h1>
                     <Button type="primary" style={{ marginRight: '30px' }} onClick={showDrawer}>
                         ....
                     </Button>

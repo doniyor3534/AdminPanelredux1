@@ -15,6 +15,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Card from '@mui/material/Card';
 import { CardActionArea } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -95,11 +96,11 @@ const Contact = () => {
         dispatch(DEL(id))
         AlertWar()
     }
-    console.log(nameVAll);
+    const {t} =useTranslation()
     return (
         <div className='contactpage'>
             <div className="contactTitle">
-                <h1 className='h1'>Contact</h1>
+                <h1 className='h1'>{t('Contact')}</h1>
                 <div className="contactTitleRight">
                     <select name="newest" id="newest" className='newest' >
                         <option value="newest">newest</option>

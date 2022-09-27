@@ -9,6 +9,24 @@
   list-style: none;
   font-family: sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+:root{
+  --bg:rgb(229, 228, 228);
+  --boq:
+}
+
+
+
+
+
+
+.bi-globe{
+  color:grey !important;
+}
+.bayroqimg{
+  width: 40px;
+  height: 25px;
+  margin-right: 5px;
+}
 .loaderCardD{
   position: fixed;
   top: 0;

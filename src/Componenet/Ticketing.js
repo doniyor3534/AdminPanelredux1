@@ -5,6 +5,7 @@ import { Button, Drawer, Form, Input, InputNumber, Popconfirm, Table, Typography
 import { useState } from 'react';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import { TicketingSaitbar } from './ALL';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -173,11 +174,11 @@ const Ticketing = () => {
     //     setPlacement(e.target.value);
     // };
 
-
+   const {t} = useTranslation()
     return (
         <div className='TTicketing'>
             <div className="dashboardhed">
-                <h1 className='h1'>Ticketing</h1>
+                <h1 className='h1'>{t('Ticketing')}</h1>
                 <Button type="primary" style={{ marginRight: '30px' }} onClick={showDrawer}>
                     ....
                 </Button>

@@ -32,20 +32,45 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import SSelect from '@mui/material/Select';
-import { Collapse, Navbar, NavbarToggler,  Nav } from 'reactstrap';
-
-
+import { Collapse, Navbar, NavbarToggler, Nav } from 'reactstrap';
+import { useTranslation } from 'react-i18next';
+import LanguageIcon from '@mui/icons-material/Language';
+import i18next from 'i18next';
 
 
 
 export const Navbarpage = () => {
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);
-    const [UZ, setUZ] = React.useState('');
+    const langDate = [
+        {
+            code: 'en',
+            title: 'English',
+            bayroq: './img/bayroqEn.png'
+        },
+        {
+            code: 'ru',
+            title: 'Россия',
+            bayroq: './img/bayroqRu.png'
+        },
+        {
+            code: 'uz',
+            title: `O'zbekiston`,
+            bayroq: './img/bayroqUZ.png'
+        },
+        {
+            code: 'ar',
+            title: `عربى`,
+            bayroq: './img/bayroqAr.png'
+        },
+    ]
+    const [UZ, setUZ] = React.useState('ar');
     const handleChange = (event) => {
         setUZ(event.target.value);
+        console.log(event.target.value);
+        i18next.changeLanguage(event.target.value)
     };
-    const [ setVisible] = useState(false);
+    const [setVisible] = useState(false);
     // const [placement, setPlacement] = useState('left');
     const showDrawer = () => {
         setVisible(true);
@@ -110,62 +135,7 @@ export const Navbarpage = () => {
         },
     ];
     return (
-        //     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        //     <div class="container-fluid">
-        //     <div className="navleft">
-        //             <div className="btn-group">
-        //                 <button ><SearchIcon /></button>
-        //                 <input type="search" placeholder='search here....' />
-        //             </div>
-        //         </div>
-        //       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        //         <span class="navbar-toggler-icon "></span>
-        //       </button>
-        //       <div class="collapse navbar-collapse" id="navbarNav">
-        //       <div className="navright">
-        //             <Button type="primary" style={{ background: 'white', boxShadow: 'none', border: 'none' }} onClick={showDrawer}>
-        //                 <TextsmsIcon />
-        //             </Button>
-        //             <Button type="primary" style={{ background: 'white', boxShadow: 'none', border: 'none' }} onClick={showDrawer}>
-        //                 <NotificationsActiveIcon />
-        //             </Button>
 
-        //             <FormControl sx={{ m: 1, minWidth: 80 }}>
-        //                 <InputLabel id="demo-select-small">UZB</InputLabel>
-        //                 <SSelect
-        //                     labelId="demo-select-small"
-        //                     id="demo-select-small"
-        //                     value={UZ}
-        //                     onChange={handleChange}
-        //                     autoWidth
-        //                     label="UZ"
-        //                     size='small'
-        //                     style={{height:'40px'}}
-        //                 >
-        //                     <MenuItem value="">
-        //                         <em>None</em>
-        //                     </MenuItem>
-        //                     <MenuItem value={10}>UZB</MenuItem>
-        //                     <MenuItem value={21}>RUS</MenuItem>
-        //                     <MenuItem value={22}>Eng</MenuItem>
-        //                 </SSelect>
-        //             </FormControl>
-        //         </div>
-        //         <Drawer
-        //             title="Basic Drawer"
-        //             placement={placement}
-        //             closable={false}
-        //             onClose={onClose}
-        //             visible={visible}
-        //             key={placement}
-        //         >
-        //             <p>Some contents...</p>
-        //             <p>Some contents...</p>
-        //             <p>Some contents...</p>
-        //         </Drawer>
-        //       </div>
-        //     </div>
-        //   </nav>
 
         <Navbar color="faded" light className='navabr navbar-expand-lg'>
 
@@ -179,7 +149,7 @@ export const Navbarpage = () => {
                         }}
                         options={options}
                     >
-                        <Input size="small" style={{background:'transparent'}} placeholder="input here" />
+                        <Input size="small" style={{ background: 'transparent' }} placeholder="input here" />
                     </AutoComplete>
                 </div>
             </div>
@@ -194,7 +164,7 @@ export const Navbarpage = () => {
                     </Button>
 
                     <FormControl sx={{ m: 1, minWidth: 80 }}>
-                        <InputLabel id="demo-select-small">UZB</InputLabel>
+                        <InputLabel id="demo-select-small"><LanguageIcon /></InputLabel>
                         <SSelect
                             labelId="demo-select-small"
                             id="demo-select-small"
@@ -205,12 +175,9 @@ export const Navbarpage = () => {
                             size='small'
                             style={{ height: '40px' }}
                         >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={10}>UZB</MenuItem>
-                            <MenuItem value={21}>RUS</MenuItem>
-                            <MenuItem value={22}>Eng</MenuItem>
+                            {
+                                langDate.map((val) => <MenuItem value={val.code}> <img src={val.bayroq} alt="bayroq" className="bayroqimg" /> {val.title}</MenuItem>)
+                            }
                         </SSelect>
                     </FormControl>
 
@@ -223,18 +190,19 @@ export const Navbarpage = () => {
 }
 // ////////////
 export const Saitbar = () => {
+    const { t } = useTranslation();
     return (
         <div className="saitbar">
             <Link to='/' ><img src="./img/images.jfif" alt="" className='logo' /></Link>
             <ul>
-                <NavLink activeclassname='active' to='/'> <HomeIcon />  Dashboard</NavLink>
-                <NavLink activeclassname='active' to='/email'> <EmailIcon />  Email</NavLink>
-                <NavLink activeclassname='active' to='/contact'> <PermContactCalendarIcon />  Contact</NavLink>
-                <NavLink activeclassname='active' to='/crypto'> <CurrencyExchangeIcon />  Crypto</NavLink>
-                <NavLink activeclassname='active' to='/kanban'> <ViewCompactIcon />  Kanban</NavLink>
-                <NavLink activeclassname='active' to='/invoice'> <ArticleIcon />  Invoice</NavLink>
-                <NavLink activeclassname='active' to='/banking'> <AccountBalanceWalletIcon />  Banking</NavLink>
-                <NavLink activeclassname='active' to='/ticketing'> <CreditCardIcon />   Ticketing</NavLink>
+                <NavLink activeclassname='active' to='/'> <HomeIcon />  {t('Dashboard')} </NavLink>
+                <NavLink activeclassname='active' to='/email'> <EmailIcon /> {t('Email')} </NavLink>
+                <NavLink activeclassname='active' to='/contact'> <PermContactCalendarIcon />{t('Contact')}  </NavLink>
+                <NavLink activeclassname='active' to='/crypto'> <CurrencyExchangeIcon />{t('Crypto')}  </NavLink>
+                <NavLink activeclassname='active' to='/kanban'> <ViewCompactIcon />{t('Kanban')}  </NavLink>
+                <NavLink activeclassname='active' to='/invoice'> <ArticleIcon />{t('Invoice')}  </NavLink>
+                <NavLink activeclassname='active' to='/banking'> <AccountBalanceWalletIcon /> {t('Banking')} </NavLink>
+                <NavLink activeclassname='active' to='/ticketing'> <CreditCardIcon /> {t('Ticketing')}  </NavLink>
             </ul>
         </div>
     )

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux/es/exports';
 import { Line, Area } from '@ant-design/plots';
 import { CryptoSaitbar } from './ALL';
 import { Button, Drawer } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -75,11 +76,12 @@ const Crypto = () => {
   // const onChange = (e) => {
   //     setPlacement(e.target.value);
   // };
+  const {t} = useTranslation()
   return (
     <div className='cryptopage'>
       <div className="cryptoHome">
         <div className="dashboardhed">
-          <h1 className='h1'>Crypto</h1>
+          <h1 className='h1'>{t('Crypto')}</h1>
           <Button type="primary" style={{ marginRight: '30px' }} onClick={showDrawer}>
             ....
           </Button>

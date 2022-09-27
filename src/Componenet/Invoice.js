@@ -7,6 +7,7 @@ import { Column, Line } from '@ant-design/plots';
 import { Button, Drawer, Dropdown, Menu } from 'antd';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -120,11 +121,12 @@ const Invoice = () => {
     // const onChange = (e) => {
     //     setPlacement(e.target.value);
     // };
+    const {t} = useTranslation()
     return (
         <div className='invoice'>
             <div className="invoiceLeft">
                 <div className="dashboardhed">
-                    <h1 className='h1'>Invoice</h1>
+                    <h1 className='h1'>{t('Invoice')}</h1>
                     <Button type="primary" style={{ marginRight: '30px' }} onClick={showDrawer}>
                         ....
                     </Button>

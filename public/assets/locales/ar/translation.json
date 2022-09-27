@@ -1,0 +1,11 @@
+{
+    "Welcome to React": "Welcome to React and react-i18next",
+    "Dashboard":"لوحة القيادة",
+    "Email":"البريد الإلكتروني",
+    "Contact":"اتصال",
+    "Crypto":"تشفير",
+    "Kanban":"كانبان",
+    "Invoice":"فاتورة",
+    "Banking":"الخدمات المصرفية",
+    "Ticketing":"التذاكر"
+}

@@ -17,6 +17,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -140,13 +141,14 @@ const Dashboard = () => {
             Alerterr()
         }
     }
-
+   
+    const {t} = useTranslation()
 
     return (
         <div className='dashboard'>
             <div className="dashboardleft">
                 <div className="dashboardhed">
-                    <h1 className='h1'>Dashboard</h1>
+                    <h1 className='h1'>{t('Dashboard')}</h1>
                     <Button type="primary" style={{ marginRight: '30px' }} onClick={showDrawer}>
                         ....
                     </Button>

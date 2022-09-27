@@ -6,6 +6,7 @@ import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { EnhancedTable } from './Tablee';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -105,10 +106,11 @@ const Banking = () => {
     // const onChange = (e) => {
     //     setPlacement(e.target.value);
     // };
+    const {t} = useTranslation()
     return (
         <div className='banking'>
             <div className="dashboardhed">
-                <h1 className='h1'>Banking</h1>
+                <h1 className='h1'>{t('Banking')}</h1>
                 <Button type="primary" style={{ marginRight: '30px' }} onClick={showDrawer}>
                     ....
                 </Button>
