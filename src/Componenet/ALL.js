@@ -9,7 +9,7 @@ import ViewCompactIcon from '@mui/icons-material/ViewCompact';
 import ArticleIcon from '@mui/icons-material/Article';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DeleteIcon from '@mui/icons-material/Delete';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
@@ -19,13 +19,13 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import SendIcon from '@mui/icons-material/Send';
-import { Select, Button, Progress, Calendar, AutoComplete, Input } from 'antd';
-import { Gauge, Liquid } from '@ant-design/plots';
+import { Select, Button, Progress, Calendar, AutoComplete, Input, Modal, Empty } from 'antd';
+import { Column, Gauge, Liquid } from '@ant-design/plots';
 import React, { useEffect, useRef, useState } from 'react';
 import { DollarCircleOutlined, EuroCircleOutlined, PayCircleOutlined, PoundOutlined } from '@ant-design/icons';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { Statistic, Avatar, Tooltip } from 'antd';
+import { Statistic, Avatar, Tooltip, Switch } from 'antd';
 import { red, green } from '@ant-design/colors';
 import { AntDesignOutlined, UserOutlined } from '@ant-design/icons';
 import InputLabel from '@mui/material/InputLabel';
@@ -36,10 +36,27 @@ import { Collapse, Navbar, NavbarToggler, Nav } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
 import LanguageIcon from '@mui/icons-material/Language';
 import i18next from 'i18next';
-
-
+import LightModeIcon from '@mui/icons-material/LightMode';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import { toast, ToastContainer } from 'react-toastify';
+import { OlchamAddFun, OlchamDelFun } from '../redux/action/Action';
+    
 
 export const Navbarpage = () => {
+
+    // kuntun
+    const [kuntun,setKuntun]=useState(true)
+    const theme = JSON.parse(localStorage.getItem('kuntun'))   
+    const kuntunclick=()=>{
+        kuntun ? localStorage.setItem('kuntun',JSON.stringify('root active')) :localStorage.setItem('kuntun',JSON.stringify('root'))
+        setKuntun(!kuntun)
+    }
+   
+    useEffect(()=>{
+        document.body.className = theme 
+    })
+
+    // kuntun
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);
     const langDate = [
@@ -156,9 +173,7 @@ export const Navbarpage = () => {
             <NavbarToggler onClick={toggleNavbar} className="me-2" />
             <Collapse isOpen={!collapsed} navbar>
                 <Nav className="navright">
-                    <Button type="primary" style={{ background: 'white', boxShadow: 'none', border: 'none' }} onClick={showDrawer}>
-                        <TextsmsIcon />
-                    </Button>
+                   <Switch onClick={kuntunclick} checkedChildren={<LightModeIcon className='kunsvg' />} unCheckedChildren={<Brightness4Icon className='tunsvg' />} className='kuntun' defaultChecked style={kuntun ?{background:'grey'}:{background:'black' , border:'1px solid white'}} />
                     <Button type="primary" style={{ background: 'white', boxShadow: 'none', border: 'none' }} onClick={showDrawer}>
                         <NotificationsActiveIcon />
                     </Button>
@@ -610,5 +625,230 @@ export const TicketingSaitbar = () => {
 // /////////
 // /////////
 // /////////
+export const DemoColumn = ({sizedata}) => {
+    // const {dataSize} =useSelector((state)=>state.SizeReduser)
+    const {dataSize} =useSelector(state=>state)
+    const [d,setD]=useState('')
+    useEffect(()=>{
+        setD( JSON.parse(localStorage.getItem('kuntun')))
+    })
+    const data = sizedata===1? dataSize.filter((val)=>val.categorya==='Nike')  :sizedata===2 ?  dataSize.filter((val)=>val.categorya==='Zara') :sizedata===3 ?  dataSize.filter((val)=>val.categorya==='Lacosta') : dataSize.filter((val)=>val.categorya==='Nike')
+    const config = {
+      data,
+      theme: d ==='root' ?'' : 'dark',
+      xField: 'type',
+      yField: 'sales',
+      color: sizedata === 1 ?
+      ' rgb(41, 39, 43)'
+      :sizedata===2 ?
+      ' rgb(160, 61, 209)'
+      :sizedata===3 ?
+      'green'
+      :'' ,
+      label: {
+        // 可手动配置 label 数据标签位置
+        position: 'middle',
+        // 'top', 'bottom', 'middle',
+        // 配置样式
+        style: {
+          fill: '#FFFFFF',
+          opacity: 0.6,
+        },
+      },
+      xAxis: {
+        label: {
+          autoHide: true,
+          autoRotate: false,
+        },
+      },
+      meta: {
+        type: {
+          alias: '类别',
+        },
+        sales: {
+          alias: 'Soni:',
+        },
+      },
+    };
+    return <Column {...config} />;
+  };
+  
+// //////////
+export const Olcham = () => {
+    const {dataSize} =useSelector(state=>state)
+    const dispatch = useDispatch()
+    const [sizedata, setSizedata] = useState(1)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalvalue, setIsModalvalue] = useState(true);
+    const showModal = () => {
+        setIsModalOpen(!isModalOpen);
+        setIsModalvalue(true)
+        setInput({
+            categorya: '',
+            type: '',
+            sales: ''
+        })
+    };
+    const showModal2 = () => {
+        setIsModalOpen(!isModalOpen);
+        setIsModalvalue(false)
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+  const data = sizedata===1? dataSize.filter((val)=>val.categorya==='Nike')  :sizedata===2 ?  dataSize.filter((val)=>val.categorya==='Zara') :sizedata===3 ?  dataSize.filter((val)=>val.categorya==='Lacosta') : dataSize.filter((val)=>val.categorya==='Nike')
 
+    // ////////////////////form
+    const [input, setInput] = useState({
+        categorya: '',
+        type: '',
+        sales: null
+    })
+    const inputfun = (e) => {
+        setInput({ ...input, [e.target.name]: e.target.value })
+    }
+    const send = (e) => {
+        e.preventDefault()
+        dispatch(OlchamAddFun({ ...input, id: new Date().getTime() }))
+        console.log(input);
+        setInput({
+            categorya: '',
+            type: '',
+            sales: null
+        })
+        toast.success(`Malumot Yuklandi`)
+    }
+    // ///////////////delet
+    const deletfun = (id) => {
+        dispatch(OlchamDelFun(id))
+        toast.error(`Malumot o'chirildi`)
+    }
+    // ///////////////edit
+    const editfun = (val) => {
+        setInput({
+            id: val.id,
+            name: val.name,
+            sana: val.sana,
+            progres: val.progres,
+            bayroq: val.bayroq
+        })
+        //  setIsModalOpen(true);
+        //  setResult(false)
+    }
+    // ///////////////
+    // ////////////////////form
+    return (
+        <div className="container">
+            <div className="col-12 d-flex justify-content-between my-3">
+                <div className="btngroup">
+                    <button className="btn-outline-dark btn rounded  mx-3" onClick={() => setSizedata(1)}>Nike <img src="./img/nike.png" alt="rasm" className="nike" /></button>
+                    <button className="btn-outline-danger btn rounded  mx-3" onClick={() => setSizedata(2)}>Zara<img src="./img/zara.png" alt="rasm" className="nike" /></button>
+                    <button className="btn-outline-success btn rounded  mx-3" onClick={() => setSizedata(3)}>Lacosta<img src="./img/Lacosta.png" alt="rasm" className="nike" /></button>
+                </div>
+                <div className="d-flex">
+                    <button className="btn-danger  btn rounded  mx-3 " onClick={(showModal2)}>Size o'chirish -</button>
+                    <button className="btn-primary  btn rounded  mx-3 " onClick={showModal}>Size qo'shish +</button>
+                </div>
+            </div>
+            <div className="col-lg-12 grid-margin stretch-card">
+                <div className="card">
+                    <DemoColumn sizedata={sizedata} />
+                </div>
+            </div>
+            {/* /////////////////////////////////////////////////////// */}
+            <ToastContainer />
+            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk}  onCancel={handleCancel}>
+                <div className="row">
+                    <div className="col-md-12 grid-margin stretch-card">
+                        {
+                            isModalvalue ?
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h4 className="card-title">Size qo'shish</h4>
+                                        <p className="card-description"> Size kiriting:</p>
+                                        <form className="forms-sample" onSubmit={send} >
+                                            <div className="form-group row my-1">
+                                                <label for="exampleInputPassword2" className="col-sm-3 col-form-label">Categorya:</label>
+                                                <div className="col-sm-9">
+                                                    <select name="categorya" className="form-select" id="category" value={input.categorya} onChange={inputfun}>
+                                                        <option value="">categorya</option>
+                                                        <option value="Nike">Nike</option>
+                                                        <option value="Zara">Zara</option>
+                                                        <option value="Lacosta">Lacosta</option>
+                                                    </select>
+                                                </div>
+                                                <label for="exampleInputPassword2" className="col-sm-3 col-form-label">Size:</label>
+                                                <div className="col-sm-9">
+                                                    <input type="text" name='type' onChange={inputfun} value={input.type} className="form-control my-1" id="exampleInputPassword2" placeholder="Size-''" />
+                                                </div>
+                                                <label for="exampleInputPassword2" className="col-sm-3 col-form-label">Soni:</label>
+                                                <div className="col-sm-9">
+                                                    <input type="number" name='sales' onChange={inputfun} value={input.sales} className="form-control my-1" id="exampleInputPassword2" placeholder="soni.." />
+                                                </div>
+                                            </div>
+                                            <button type="submit" className="btn btn-primary me-2 rounded-2" onClick={showModal} >ADD</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                : <div className="card ">
+                                    <div className="card-head d-flex justify-content-between p-3">
+                                        <div className="left">
+                                            <h4 className="card-title">{new Set(data.map(val=>val.categorya))}</h4>
+                                            <p className="card-description text-secondary fw-bold"> Size Control:
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="card-body ">
+                                        <table className="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th> id </th>
+                                                    <th> Size </th>
+                                                    <th> korsatkich </th>
+                                                    <th> soni </th>
+                                                    <th className="text-center"> ED/Del </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    data.length > 0 ?
+                                                    data.map((val) => (
+                                                            <tr key={val.id}>
+                                                                <td className="py-1">
+                                                                    <p>{val.id}</p>
+                                                                </td>
+                                                                <td> {val.type}</td>
+                                                                <td>
+                                                                    <div className="progress">
+                                                                        <div className={`progress-bar bg-${val.sales < 10 ? 'error' : val.sales < 30 ? 'error' : val.sales < 50 ? "warning" : 'success'}`} role="progressbar" style={{ width: `${val.sales}%` }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td> {val.sales} dona </td>
+                                                                <td className="gap-1 d-flex">
+                                                                    {/* <button className=" btn-warning rounded mx-3" onClick={() => editfun(val)}>edit</button> */}
+                                                                    <button className=" btn-danger rounded" onClick={() => deletfun(val.id)}>delete</button>
+                                                                </td>
+                                                            </tr>
+                                                        ))
+                                                        : <Empty />
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        }
+                    </div>
+                </div>
+            </Modal>
+        </div>
+    )
+}
+  
+// //////////
+// //////////
+// //////////
+// //////////
 

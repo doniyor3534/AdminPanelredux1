@@ -9,16 +9,94 @@
   list-style: none;
   font-family: sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-:root{
-  --bg:rgb(229, 228, 228);
-  --boq:
+.root{
+  --bg: #F9FAFF;
+  --bgoq:#FFFFFF;
+  --bgsiyoq:#5149E4;
+  --saitbarcolor:#5149E4;
+  --saitbarcolorHover:#5149E4;
+  --bggrey:#8A96B1;
+  --textcolor: #0A0603;
+}
+.root.active{
+  --bg: #111317;
+  --bgoq:#1A1E23;
+  --bgsiyoq:#5149E4;
+  --saitbarcolor:#929292;
+  --saitbarcolorHover:#ebebf0;
+  --bggrey:#8A96B1;
+  --textcolor: #FFFFFF;
+}
+/* /////////////////// */
+.nike{
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.nike img{
+  object-fit: fill;
+  color: rgb(41, 39, 43);
+}
+/* //////////////////////olcham */
+/* //////////////////////galery */
+/* //////////////////////galery */
+.ant-modal{
+  width: 60% !important;
+}
+.cardimg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  mix-blend-mode: multiply;
+}
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  gap: 15px;
+}
+.modalcard img{
+  width: 50% !important; 
+  height: auto;
+}
+/* /////////////////// */
+h1,h2,h3,h4,h5,h6,p{
+  color: var(--textcolor) !important;
 }
 
-
-
-
-
-
+.carddash{
+  background-color: var(--bgoq) !important;
+  display: flex ;
+  justify-content: space-around;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid rgb(206, 203, 203);
+  border-radius: 10px;
+}
+.carddash img{
+  width: 50px;
+  height: 50px;
+}
+.MuiSelect-select{
+  background-color: rgb(216, 214, 214) !important;
+}
+.kuntun{
+  width: 50px;
+  height: 25px !important;
+  overflow: hidden;
+}
+.kunsvg{
+  width: 20px !important;
+  height: 20px !important;
+  color:rgb(255, 247, 0);
+  margin-bottom: 2px;
+}
+.tunsvg{
+  width: 20px !important;
+  height: 20px !important;
+  color:#FFF;
+  margin-bottom: 2px;
+}
 .bi-globe{
   color:grey !important;
 }
@@ -125,7 +203,7 @@ select {
 /* //navbar */
 .navbar {
   padding: 10px 5%;
-  background-color: #F9FAFF;
+  background-color: var(--bgoq);
 }
 
 .logo {
@@ -163,7 +241,7 @@ select {
   height: auto;
 }
 .saitbar {
-  background: #F9FAFF;
+  background: var(--bg);
   width: 100%;
   height: 100vh;
   padding: 30px 0;
@@ -174,7 +252,7 @@ select {
 }
 
 .saitbarright {
-  background: #F9FAFF;
+  background: var(--bg);
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -264,7 +342,7 @@ select {
   font-size: 15px;
   padding-left: 30px;
   font-weight: 500;
-  color: rgb(71, 24, 116);
+  color: var(--saitbarcolor );
   width: 100%;
   border-left: transparent 4px solid;
 }
@@ -272,12 +350,14 @@ select {
 .saitbar ul a.active {
   border-right: rgb(148, 54, 235) 5px solid;
   border-left: rgb(147, 56, 232) 4px solid;
-  background-color: #3d37b61b;
+  background-color: var(--bgoq);
+  color: var(--saitbarcolorHover);
 }
 .saitbar ul a:hover {
   border-right: rgb(144, 55, 227) 5px solid;
   border-left: rgb(134, 50, 213) 4px solid;
-  background-color: #3d37b61b;
+  background-color: var(--bgoq);
+  color: var(--saitbarcolorHover) !important;
 }
 .saitbar ul a svg {
   width: 40px;
@@ -317,6 +397,7 @@ select {
 
 .homeceneter {
   width: 100%;
+  background-color: var(--bg);
 }
 
 /* home */
@@ -350,7 +431,7 @@ select {
 
 
 .proect_card {
-  background: #F9FAFF;
+  background: var(--bgoq);
   cursor: pointer;
 }
 .proect_card .css-46bh2p-MuiCardContent-root {
@@ -397,7 +478,7 @@ select {
   width: 100%;
   height: auto;
   padding: 15px;
-  background: #F9FAFF;
+  background: var(--bgoq);
 }
 
 .donutchart {
@@ -438,7 +519,7 @@ select {
   width: 100%;
   height: auto;
   padding: 20px;
-  background: #F9FAFF;
+  background: var(--bgoq);
   margin-top: 30px;
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -477,7 +558,7 @@ select {
 }
 
 .contact {
-  background: #F9FAFF;
+  background: var(--bgoq);
   padding: 10px;
 }
 
@@ -517,7 +598,7 @@ select {
   width: 100%;
   height: 100%;
   padding: 15px 10px;
-  background-color: rgb(231, 230, 230);
+  background-color: var(--bgoq);
 }
 
 .contactBodyTitle p {
@@ -538,7 +619,7 @@ select {
 }
 
 .massege {
-  background: #F9FAFF;
+  background: var(--bgoq);
   padding: 10px;
 }
 
@@ -551,7 +632,7 @@ select {
 }
 
 .userraviesCard {
-  background-color: #FFF;
+  background-color: var(--bgoq);
   padding: 10px;
 }
 
@@ -568,7 +649,7 @@ select {
 
 .userraviesCardBody p {
   font-size: 10px;
-  color: rgb(177, 177, 177);
+  color: var(--textcolor);
   margin-top: 10px;
 }
 
@@ -623,7 +704,7 @@ select {
 
 .newmail {
   padding: 10px;
-  background-color: #FFF;
+  background-color: var(--bgoq);
   width: 100%;
   font-weight: 600;
 }
@@ -647,13 +728,13 @@ select {
 }
 
 .emailBlockleft li:hover {
-  background-color: #FFF;
+  background-color: var(--bgoq);
   color: #000;
   font-weight: 500;
 }
 
 .emailBlockleft li.active {
-  background-color: #FFF;
+  background-color:var(--bgoq);
   color: #000;
   font-weight: 500;
 }
@@ -672,7 +753,7 @@ select {
 }
 
 .emailBlockleft .label {
-  color: rgb(142, 140, 140);
+  color: var(--textcolor);
   font-weight: 500;
 }
 
@@ -726,7 +807,7 @@ select {
 .emailBlockright .body .bodyCard .bodyCard2{
   height: 100%;
   padding: 10px;
-  background-color: #F9FaFF;
+  background-color: var(--bgoq);
   display: grid;
   grid-template-columns: 20% 60% 20%;
   text-align: center;
@@ -786,7 +867,7 @@ select {
 
   /* Gray */
 
-  color: #8A96B1;
+  color: var(--textcolor);
 
 }
 
@@ -813,11 +894,11 @@ select {
 
 .prewievcardHead {
   height: 70px;
-  background-color: #8A96B1;
+  background-color: var(--bgoq);
 }
 
 .prewievcardbody {
-  color: #8A96B1;
+  color: var(--textcolor);
 }
 
 .massegeCard {
@@ -878,7 +959,7 @@ select {
 
 .newest {
   padding: 10px;
-  color: #8A96B1;
+  color: var(--textcolor);
 }
 
 .newbtn {
@@ -903,7 +984,7 @@ select {
 
 .contactcard {
   padding: 10px;
-  background-color: #d3d3d334;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -936,14 +1017,14 @@ select {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  color: #8A96B1;
+  color: var(--textcolor);
 }
 .noPage{
   width: 100%;
   height: auto;
 }
 .contactEmailP{
-  color: #c0c8db;
+  color: var(--textcolor);
   margin: 10px 0;
 }
 .contactcadFooter {
@@ -951,11 +1032,11 @@ select {
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  color: #8A96B1;
+  color: var(--textcolor);
 }
 
 .contactcadFooter button {
-  color: #545861;
+  color: var(--textcolor);
 }
 .contactCardBody{
   display: flex;
@@ -990,7 +1071,7 @@ select {
 .cryptoCard {
   height: 150px;
   padding: 10px;
-  background-color: #f7f7f896;
+  background-color: var(--bg);
   margin-bottom: 20px;
 }
 
@@ -1024,7 +1105,7 @@ select {
   height: 90vh;
   overflow: scroll;
   padding: 20px;
-  background: #F9FAFF;
+  background: var(--bgoq);
 }
 
 .cryptosaitbarhead {
@@ -1047,7 +1128,7 @@ select {
 
 .bitcoincard {
   padding: 10px;
-  background-color: #c0c8db;
+  background-color: var(--bgoq);
   display: grid;
   grid-template-columns: 30% 40% 30%;
 }
@@ -1116,7 +1197,7 @@ select {
 
 .tab1CardFooter button {
   padding: 5px;
-  background-color: #8A96B1;
+  background-color: var(--bg);
   border-radius: 5px;
 }
 
@@ -1147,7 +1228,7 @@ select {
   padding: 10px;
   position: relative;
   z-index: 1;
-  background: #F9FAFF;
+  background: var(--bgoq);
 }
 
 .tab1Card:hover {
@@ -1294,7 +1375,7 @@ select {
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  color: #8A96B1;
+  color: var(--textcolor);
   margin: 10px 0;
 }
 
@@ -1329,7 +1410,7 @@ select {
 
 
 .invoiceLeftPageRight {
-  background-color: #c0c8db52;
+  background-color: var(--bg);
   padding: 15px;
 }
 
@@ -1350,7 +1431,7 @@ select {
 
 .invoiceSaitbarhead {
   padding: 15px;
-  background: rgba(128, 128, 128, 0.39);
+  background: var(--bggrey);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
@@ -1405,7 +1486,7 @@ select {
 }
 
 .lesttest {
-  background: #F9FAFF;
+  background: var(--bgoq);
   margin-top: 10px;
 }
 
@@ -1465,7 +1546,7 @@ select {
 }
 .ticketingCard{
   padding: 15px;
-  background-color: #F9FAFF;
+  background-color: var(--bgoq);
 }
 .ticketingCard h4{
   font-weight: 700;
@@ -1482,7 +1563,7 @@ select {
   height: 90vh;
   overflow: scroll;
   padding: 10px;
-  background-color: #F9FAFF;
+  background-color: var(--bg);
 }
 .today{
   margin: 20px 0;
@@ -1490,7 +1571,7 @@ select {
 .todaycard{
   height: 100px;
   padding: 10px;
-  background-color: #FFF;
+  background-color: var(--bgoq);
   margin: 15px 0;
   display: grid;
   grid-template-columns: 5% 50% 45%;
@@ -1524,7 +1605,7 @@ select {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-    color: #0A0603;
+    color: var(--textcolor);
   }
   .ant-drawer-content-wrapper{
     width: 30% !important;
@@ -1579,12 +1660,12 @@ select {
   display: block;
 }
 .saitbar {
-  background: #F9FAFF;
+  background: var(--bg);
   width: 100%;
 }
 
 .saitbarright {
-  background: #F9FAFF;
+  background: var(--bg);
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -1881,12 +1962,10 @@ select {
   display: block;
 }
 .saitbar {
-  background: #F9FAFF;
   width: 100%;
 }
 
 .saitbarright {
-  background: #F9FAFF;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -2175,12 +2254,10 @@ select {
   display: block;
 }
 .saitbar {
-  background: #F9FAFF;
   width: 100%;
 }
 
 .saitbarright {
-  background: #F9FAFF;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -2464,12 +2541,10 @@ select {
   display: none;
 }
 .saitbar {
-  background: #F9FAFF;
   width: 100%;
 }
 
 .saitbarright {
-  background: #F9FAFF;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -2754,12 +2829,10 @@ select {
   display: none;
 }
 .saitbar {
-  background: #F9FAFF;
   width: 100%;
 }
 
 .saitbarright {
-  background: #F9FAFF;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -3047,12 +3120,10 @@ select {
   display: none;
 }
 .saitbar {
-  background: #F9FAFF;
   width: 100%;
 }
 
 .saitbarright {
-  background: #F9FAFF;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;

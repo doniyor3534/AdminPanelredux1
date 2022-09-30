@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
-    <div className='app'>
+    <div className='app'  >
         <HOME/>
     </div>
   )

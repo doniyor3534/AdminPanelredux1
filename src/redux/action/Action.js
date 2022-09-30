@@ -29,3 +29,24 @@ export const Mailfun=(id)=>{
         type:Types.mailclick
     }
 }
+// //
+export const KuntunFun=(data)=>{
+    return{
+        payload:data,
+        type:Types.kuntunClick
+    }
+}
+// //
+// //////////////////////////////O'lcham
+export const OlchamAddFun = (val)  =>{
+    return{
+        type:Types.sizeAdd,
+        payload:val
+    }
+}
+export const OlchamDelFun = (id)  =>{
+    return{
+        type:Types.sizeDelet,
+        payload:id
+    }
+}

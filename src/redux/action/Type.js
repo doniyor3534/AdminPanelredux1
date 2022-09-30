@@ -4,5 +4,11 @@ export const Types={
     edit:'edit',
     reyting:'reyting',
     loader:'lader',
-    mailclick:'mailclick'
+    mailclick:'mailclick',
+    // /
+    kuntunClick:'kuntunClick',
+    // /
+    sizeAdd:'sizeAdd',
+    sizeEdit:'sizeEdit',
+    sizeDelet:'sizeDelet'
 }

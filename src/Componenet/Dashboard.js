@@ -10,7 +10,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import { useDispatch, useSelector } from 'react-redux';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
-import { Saitbarrightdashboard } from './ALL';
+import { Olcham, Saitbarrightdashboard } from './ALL';
 import { Drawer, Button, Modal, Empty } from 'antd';
 import { ADD, Mailfun } from '../redux/action/Action';
 import Card from '@mui/material/Card';
@@ -116,23 +116,23 @@ const Dashboard = () => {
     const inputfunImg = (e) => {
         setInput({ ...input, img: URL.createObjectURL(e.target.files[0]) })
     }
-    const nameVAll = comments.find(val => val.name===input.name)
-    const emailVAll = comments.find(val => val.email===input.email)
-    const imgVAll = comments.find(val => val.img===input.img)
-    const telVAll = comments.find(val => val.tel===input.tel)
+    const nameVAll = comments.find(val => val.name === input.name)
+    const emailVAll = comments.find(val => val.email === input.email)
+    const imgVAll = comments.find(val => val.img === input.img)
+    const telVAll = comments.find(val => val.tel === input.tel)
     const send = () => {
         if (nameVAll) {
             toast.error('name err')
-        } 
+        }
         if (emailVAll) {
             toast.error('email err')
-        } 
+        }
         if (imgVAll) {
             toast.error('img err')
-        } 
+        }
         if (telVAll) {
             toast.error('tel err')
-        } 
+        }
         if (input.name && input.comment && input.email && input.img && input.narx && input.tel && !nameVAll && !emailVAll && !imgVAll && !telVAll) {
             dispatch(ADD({ ...input, id: new Date().getTime() }))
             AlertOK()
@@ -141,8 +141,8 @@ const Dashboard = () => {
             Alerterr()
         }
     }
-   
-    const {t} = useTranslation()
+
+    const { t } = useTranslation()
 
     return (
         <div className='dashboard'>
@@ -157,17 +157,13 @@ const Dashboard = () => {
 
                     {
                         dashHedCardsMas.map((val) => (
-                            <Card className="proect_card" key={val.id}>
-                                <CardActionArea>
-                                    <CardContent>
-                                        <img src={val.img} alt="" />
-                                        <div className="body">
-                                            <p>{val.name}</p>
-                                            <h4>{val.korsatkich}</h4>
-                                        </div>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
+                            <div className=" carddash" key={val.id}>
+                                <img src={val.img} alt="" />
+                                <div className="body">
+                                    <p>{val.name}</p>
+                                    <h4>{val.korsatkich}</h4>
+                                </div>
+                            </div>
                         ))
                     }
                 </div>
@@ -178,7 +174,7 @@ const Dashboard = () => {
                         {/* <p className='activity_p1'><span></span> Last Year</p>
                     <p className='activity_p2'><span></span> Last Year</p> */}
                     </div>
-                    <Chart
+                    {/* <Chart
                         chartType="ComboChart"
                         // data={[["Age", "Weight"], [4, 5.5], [8, 12]]}
                         width="100%"
@@ -186,8 +182,8 @@ const Dashboard = () => {
                         legendToggle
                         options={options}
                         data={datachart}
-                    />
-
+                    /> */}
+                    <Olcham/>
                     <div className="pieChart">
                         <h3>Pie chart</h3>
                         <div className="pieChartcard">
@@ -314,7 +310,7 @@ const Dashboard = () => {
                 {
                     modaltel === 'modalform' ?
                         <>
-                           <form onSubmit={send} >
+                            <form onSubmit={send} >
                                 <label htmlFor="Name">Name</label>
                                 <input type="text" style={nameVAll ? { border: '1px solid red' } : !input.name ? { border: '1px solid grey' } : { border: '1px solid green' }} className='form-control  my-2' placeholder='Name' name='name' onChange={inputfun} value={input.name} />
                                 <label htmlFor="email">Email</label>
@@ -332,7 +328,9 @@ const Dashboard = () => {
                                 <button className={input.name && input.comment && input.email && input.img && input.narx && input.tel ? 'btn btn-primary w-50 my-3' : 'btn btn-warning disabled w-50 my-3'}  >Add</button>
                             </form>
                         </>
-                        : <h1 className='tel'>{modaltel}</h1>
+                        :modaltel=== 'card' ?
+                                    <h1>ggg</h1>
+                        :<h1 className='tel'>{modaltel}</h1>
                 }
             </Modal>
             <ToastContainer />
